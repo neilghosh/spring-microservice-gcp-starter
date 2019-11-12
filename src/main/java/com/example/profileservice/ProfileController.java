@@ -15,6 +15,11 @@ ProfileService profileService;
         return profileService.findAllProfiles();
     }
 
+    @GetMapping("/profiles/{name}")
+    public String getByName(@PathVariable String name) {
+        return profileService.findByName(name);
+    }
+
     @PostMapping(path = "/profiles", consumes = "application/json", produces = "application/json")
     public String postProfiles(@RequestBody Profile profile) {
         return profileService.saveProfile(profile.name, profile.country, profile.birthYear);

@@ -20,12 +20,14 @@ gcloud app deploy
 
 ## API
   ```
-  GET https://8080-dot-2972582-dot-devshell.appspot.com/profiles
+  GET http://localhost:8080/profiles
+  GET http://localhost:8080/profiles/Ghosh
 
-curl -v \
-  -d '{"name":"Neil Ghosh", "country":"India", "birthYear":1990}' \
-  -H "Content-Type: application/json" -X POST \
-  https://cloud-on-air-2019.appspot.com/profiles
+
+curl -v -X POST \
+-d '{"name":"Ghosh", "country":"India", "birthYear":1991}' \
+-H "Content-Type: application/json" \
+http://localhost:8080/profiles
 
   ```
 
