@@ -1,4 +1,5 @@
 FROM gcr.io/google-appengine/openjdk:8
+RUN mvn package
 COPY target/profile-service-0.0.1-SNAPSHOT.jar $APP_DESTINATION
 
 #The following lines would be required while running locally as
