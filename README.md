@@ -61,6 +61,14 @@ http://localhost:8080/profiles
   https://cloud-on-air-2019.appspot.com/profiles
   ```
 
+## Measure 
+
+Add the following to the end of curl command to measure execution time 
+
+```
+-w  "\nExecution Time - %{time_starttransfer}\n"
+```
+
 ### Reference Documentation
 For further reference, please consider the following sections:
 
