@@ -10,9 +10,24 @@
 mvn clean package 
 
 docker build . -t profile-service
+```
+## Run
+```
+java -jar 
+brew services start redis
+java -jar target/profile-service-0.0.1-SNAPSHOT.jar
+```
+
+Note for running in docker create a service account key with datastore read/write permission and 
+add following lines in the Dockerfile 
+
+```
+COPY key.json /key.json
+ENV GOOGLE_APPLICATION_CREDENTIALS=/key.json
 
 docker run -p 8080:8080 profile-service
 ```
+
 ## Deploy
 ``` 
 gcloud app deploy
